@@ -1,10 +1,12 @@
 <?php while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
+  <article <?php post_class(['panel', 'panel-default']); ?>>
+    <header class="panel-heading clearfix">
+      <h1 class="entry-title h5 pull-left"><?php the_title(); ?></h1>
+      <div class="pull-right">
+        <?php get_template_part('templates/entry-meta'); ?>
+      </div>
     </header>
-    <div class="entry-content">
+    <div class="panel-body">
       <?php the_content(); ?>
     </div>
     <footer>
